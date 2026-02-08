@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        --background: 0.98 0.02 45;
+        --foreground: 0.25 0.08 35;
+        --card: 0.99 0.01 50;
+        --card-foreground: 0.25 0.08 35;
+        --popover: 0.99 0.01 50;
+        --popover-foreground: 0.25 0.08 35;
+        --primary: 0.65 0.15 45;
+        --primary-foreground: 0.99 0.01 50;
+        --secondary: 0.95 0.03 50;
+        --secondary-foreground: 0.30 0.08 35;
+        --muted: 0.95 0.03 50;
+        --muted-foreground: 0.55 0.05 40;
+        --accent: 0.75 0.18 35;
+        --accent-foreground: 0.99 0.01 50;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.88 0.04 45;
+        --input: 0.88 0.04 45;
+        --ring: 0.65 0.15 45;
+        --chart-1: 0.70 0.18 40;
+        --chart-2: 0.65 0.15 30;
+        --chart-3: 0.60 0.12 50;
+        --chart-4: 0.75 0.20 35;
+        --chart-5: 0.68 0.16 45;
+        --sidebar: 0.98 0.02 45;
+        --sidebar-foreground: 0.25 0.08 35;
+        --sidebar-primary: 0.65 0.15 45;
+        --sidebar-primary-foreground: 0.99 0.01 50;
+        --sidebar-accent: 0.95 0.03 50;
+        --sidebar-accent-foreground: 0.30 0.08 35;
+        --sidebar-border: 0.88 0.04 45;
+        --sidebar-ring: 0.65 0.15 45;
+        
+        /* Game-specific tokens */
+        --game-panel-bg: 0.97 0.02 48;
+        --game-panel-border: 0.85 0.06 42;
+        --stat-highlight-bg: 0.92 0.08 45;
+        --stat-card-bg: 0.95 0.03 48;
+    }
+
+    .dark {
+        --background: 0.20 0.06 35;
+        --foreground: 0.95 0.03 50;
+        --card: 0.25 0.07 35;
+        --card-foreground: 0.95 0.03 50;
+        --popover: 0.22 0.06 35;
+        --popover-foreground: 0.95 0.03 50;
+        --primary: 0.75 0.18 45;
+        --primary-foreground: 0.20 0.06 35;
+        --secondary: 0.30 0.08 35;
+        --secondary-foreground: 0.95 0.03 50;
+        --muted: 0.30 0.08 35;
+        --muted-foreground: 0.65 0.10 40;
+        --accent: 0.45 0.12 40;
+        --accent-foreground: 0.95 0.03 50;
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.95 0.03 50;
+        --border: 0.35 0.08 35;
+        --input: 0.35 0.08 35;
+        --ring: 0.65 0.15 45;
+        --chart-1: 0.70 0.18 40;
+        --chart-2: 0.65 0.15 30;
+        --chart-3: 0.60 0.12 50;
+        --chart-4: 0.75 0.20 35;
+        --chart-5: 0.68 0.16 45;
+        --sidebar: 0.25 0.07 35;
+        --sidebar-foreground: 0.95 0.03 50;
+        --sidebar-primary: 0.75 0.18 45;
+        --sidebar-primary-foreground: 0.95 0.03 50;
+        --sidebar-accent: 0.30 0.08 35;
+        --sidebar-accent-foreground: 0.95 0.03 50;
+        --sidebar-border: 0.35 0.08 35;
+        --sidebar-ring: 0.65 0.15 45;
+        
+        /* Game-specific tokens for dark mode */
+        --game-panel-bg: 0.28 0.08 38;
+        --game-panel-border: 0.38 0.10 40;
+        --stat-highlight-bg: 0.35 0.12 42;
+        --stat-card-bg: 0.32 0.09 40;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer components {
+    /* Game Panel Styling */
+    .game-panel {
+        @apply bg-[oklch(var(--game-panel-bg)/0.97)] border-2 border-[oklch(var(--game-panel-border))] shadow-2xl backdrop-blur-sm;
+    }
+    
+    /* Stat Cards */
+    .stat-highlight {
+        @apply bg-gradient-to-br from-[oklch(var(--stat-highlight-bg))] to-[oklch(var(--stat-card-bg))] p-4 sm:p-5 rounded-xl border-2 border-amber-300 shadow-lg;
+    }
+    
+    .stat-card {
+        @apply bg-[oklch(var(--stat-card-bg)/0.7)] p-3 sm:p-4 rounded-lg border border-amber-200 shadow-sm;
+    }
+    
+    /* Click Button - Larger size */
+    .click-button {
+        @apply relative w-72 h-72 sm:w-80 sm:h-80 md:w-[22rem] md:h-[22rem] rounded-full bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 hover:from-amber-500 hover:via-orange-600 hover:to-amber-700 shadow-2xl border-4 border-amber-300 overflow-hidden;
+        @apply transition-all duration-200 ease-out;
+        @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-400 focus-visible:ring-offset-4 focus-visible:ring-offset-amber-900/50;
+        @apply motion-safe:hover:scale-105 motion-safe:active:scale-95;
+        @apply motion-reduce:hover:brightness-110 motion-reduce:active:brightness-90;
+    }
+    
+    /* Upgrade Cards */
+    .upgrade-card {
+        @apply border-2 transition-all duration-300 ease-out;
+    }
+    
+    .upgrade-card-affordable {
+        @apply border-amber-300 bg-white/95 hover:border-amber-400 hover:shadow-lg hover:scale-[1.02] cursor-pointer;
+    }
+    
+    .upgrade-card-locked {
+        @apply border-gray-300 bg-gray-100/80 opacity-70;
+    }
+    
+    .upgrade-card-purchased {
+        @apply border-green-500 bg-green-50/95 shadow-xl scale-[1.03] ring-2 ring-green-400/50;
+    }
+    
+    /* Click Feedback */
+    .click-feedback-text {
+        @apply text-2xl sm:text-3xl font-bold text-amber-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)];
+        @apply motion-safe:animate-float-up;
+        @apply motion-reduce:opacity-100;
+    }
+    
+    /* Cursor Trail Canvas */
+    .cursor-trail-canvas {
+        @apply fixed inset-0 pointer-events-none z-50;
+    }
+}
+
+@layer utilities {
+    /* Float Up Animation */
+    @keyframes float-up {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(0) scale(1);
+        }
+        50% {
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(-40px) scale(1.1);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -50%) translateY(-100px) scale(0.9);
+        }
+    }
+
+    .animate-float-up {
+        animation: float-up 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    
+    /* Reduced Motion Override */
+    @media (prefers-reduced-motion: reduce) {
+        .animate-float-up {
+            animation: none;
+            opacity: 1;
+        }
+        
+        .click-feedback-text {
+            animation: fade-out 0.8s ease-out forwards;
+        }
+        
+        @keyframes fade-out {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+    
+    /* Custom Scrollbar for Shop Areas */
+    .scrollbar-warm::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .scrollbar-warm::-webkit-scrollbar-track {
+        @apply bg-amber-100/50 rounded-full;
+    }
+    
+    .scrollbar-warm::-webkit-scrollbar-thumb {
+        @apply bg-amber-400/70 rounded-full hover:bg-amber-500/80;
+    }
+    
+    /* Smooth scrolling for browsers that support it */
+    .scrollbar-warm {
+        scroll-behavior: smooth;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+        .scrollbar-warm {
+            scroll-behavior: auto;
+        }
+    }
+}

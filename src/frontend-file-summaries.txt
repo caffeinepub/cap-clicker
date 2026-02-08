@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main app component that renders the CapClickerView game and the CursorMotionTrail overlay component.",
+  "frontend/src/features/game/useCapClickerGame.ts": "Custom React hook managing all game state (caps, upgrades, levels) and game logic (clicking, purchasing, idle generation) with proper state updates and cost calculations.",
+  "frontend/src/features/game/upgrades.ts": "Defines the upgrade catalog with 5 click upgrades and 5 automation upgrades (10 total), each with unique IDs, names, descriptions, and balanced cost/effect progression from early to late game.",
+  "frontend/src/features/game/CapClickerView.tsx": "Main game view with polished three-column layout featuring enhanced visual hierarchy, SmoothScrollArea components for shop sections with smooth wheel scrolling, larger click button (72-88 units) with improved hit detection, and accessible footer link.",
+  "frontend/src/features/game/components/UpgradeCard.tsx": "Reusable upgrade card with enhanced affordability indicators using icons and badges (not color-only), improved typography and spacing, polished hover/focus states, and clear visual distinction between affordable/locked/purchased states.",
+  "frontend/src/features/game/components/ClickFeedback.tsx": "Animated floating feedback component with improved animation timing using cubic-bezier easing, reduced-motion support via CSS, and ARIA attributes for accessibility.",
+  "frontend/src/index.css": "Global styles with warm OKLCH color system, custom component classes for game panels/stats/buttons/upgrades, smooth animations with reduced-motion overrides, larger click button sizing (w-72 to w-[22rem]), custom scrollbar styling, and cursor trail canvas positioning.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended warm-themed shadow utilities, custom float-up animation with bounce easing, and all color tokens properly mapped to OKLCH values.",
+  "frontend/src/components/ui/button.tsx": "Shadcn Button component with variants for consistent button styling across the game.",
+  "frontend/src/components/ui/card.tsx": "Shadcn Card component and subcomponents for displaying stats and upgrade panels.",
+  "frontend/src/lib/utils.ts": "Utility function for merging Tailwind classes using clsx and tailwind-merge.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as the game uses only local state without backend queries.",
+  "frontend/src/hooks/usePrefersReducedMotion.ts": "Custom React hook that detects and tracks the user's prefers-reduced-motion preference, updating when the system setting changes.",
+  "frontend/src/features/game/components/SmoothScrollArea.tsx": "Wrapper around ScrollArea that adds smooth wheel/trackpad scrolling via requestAnimationFrame interpolation while preserving keyboard navigation and respecting prefers-reduced-motion.",
+  "frontend/src/features/game/components/CursorMotionTrail.tsx": "Canvas-based cursor motion trail component that renders a subtle amber/orange blur effect when the pointer moves quickly, fading out when movement slows, with full reduced-motion support and no pointer-event blocking."
+}

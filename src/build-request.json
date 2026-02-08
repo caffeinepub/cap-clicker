@@ -1,0 +1,84 @@
+{
+  "kind": "build_request",
+  "title": "Enlarge click target, add smooth scrolling, and add fast-mouse motion blur effect",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Increase the size and hit area of the primary click target (the main \"CLICK!\" button) so it is noticeably bigger and easier to click/tap on both desktop and mobile, without breaking the existing centered layout.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "the place where i click is smaller make it bigger"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The main click button renders larger than before at all breakpoints (mobile + desktop).",
+        "Click/tap reliably registers across the entire visible button area; no dead zones near the edges.",
+        "The button remains centered in the middle column and does not overlap the Stats or Shop panels at common screen sizes."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Add smooth scrolling behavior for the game’s scrollable shop areas (the two ScrollArea lists) so mouse wheel/trackpad scrolling feels smooth and not jumpy.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "add smooth scroll"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Scrolling the Click Upgrades and Automation shop lists feels smooth (no abrupt jumps) when using mouse wheel/trackpad.",
+        "Smooth scrolling does not break keyboard scrolling (Arrow keys / PageDown) inside the shop lists.",
+        "If the user has reduced motion enabled, smooth scrolling is disabled or significantly reduced to respect the preference."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Add a fast-mouse-movement blur effect so that when the pointer moves quickly, a subtle motion blur/trail effect appears, and it fades away when the pointer slows down or stops.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "and mouse blur when it is move fast"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When the pointer moves quickly, a visible but subtle blur/trail effect appears near the cursor; when movement slows, the effect diminishes and disappears.",
+        "The effect does not interfere with clicking (must not block pointer events on underlying UI).",
+        "The effect respects prefers-reduced-motion (disabled when reduced motion is enabled).",
+        "The effect is performant (no noticeable frame drops during normal gameplay interactions)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend code under the immutable paths listed in SYSTEM_CONTEXT must not be modified; compose existing UI components instead of editing them.",
+    "Do not introduce backend changes; this request is UI/UX only."
+  ],
+  "nonGoals": [
+    "Adding new upgrades, currencies, or gameplay mechanics.",
+    "Changing the warm amber/orange visual theme or replacing generated art assets."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-08T04:08:06.343Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-12",
+        "summary": "Increase the size and hit area of the primary click target (the main \"CLICK!\" button) so it is noticeably bigger and easier to click/tap on both desktop and mobile, without breaking the existing centered layout.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/features/game/CapClickerView.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/features/game/CapClickerView.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Add smooth scrolling behavior for the game’s scrollable shop areas (the two ScrollArea lists) so mouse wheel/trackpad scrolling feels smooth and not jumpy.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/usePrefersReducedMotion.ts",
+          "frontend/src/features/game/components/SmoothScrollArea.tsx",
+          "frontend/src/features/game/CapClickerView.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/usePrefersReducedMotion.ts",
+          "frontend/src/features/game/components/SmoothScrollArea.tsx",
+          "frontend/src/features/game/CapClickerView.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Add a fast-mouse-movement blur effect so that when the pointer moves quickly, a subtle motion blur/trail effect appears, and it fades away when the pointer slows down or stops.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/game/components/CursorMotionTrail.tsx",
+          "frontend/src/index.css",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/game/components/CursorMotionTrail.tsx",
+          "frontend/src/index.css",
+          "frontend/src/App.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/features/game/CapClickerView.tsx",
+    "frontend/src/features/game/components/CursorMotionTrail.tsx",
+    "frontend/src/features/game/components/SmoothScrollArea.tsx",
+    "frontend/src/hooks/usePrefersReducedMotion.ts",
+    "frontend/src/index.css",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

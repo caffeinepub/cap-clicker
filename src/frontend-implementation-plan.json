@@ -1,0 +1,81 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Cap Clicker: larger click target, smooth shop scrolling, and fast-cursor motion blur trail",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Make the main CLICK button noticeably larger with a reliable full-area hit target while keeping the centered 3-column layout intact.",
+      "acceptanceCriteria": [
+        "The main click button renders larger than before at all breakpoints (mobile + desktop).",
+        "Click/tap reliably registers across the entire visible button area; no dead zones near the edges.",
+        "The button remains centered in the middle column and does not overlap the Stats or Shop panels at common screen sizes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Increase the .click-button size at mobile/desktop breakpoints (and keep it round/centered) while preserving the existing amber/orange theme; ensure sizing changes don’t cause overflow in the center column."
+        },
+        {
+          "path": "frontend/src/features/game/CapClickerView.tsx",
+          "operation": "modify",
+          "description": "Update the main shadcn/ui Button composition for the CLICK button to match the new larger sizing and ensure the decorative background layer cannot create dead zones (e.g., ensure overlay layers don’t capture pointer events). Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Add smooth wheel/trackpad scrolling to the two shop ScrollArea lists while preserving keyboard scrolling and respecting reduced-motion preferences.",
+      "acceptanceCriteria": [
+        "Scrolling the Click Upgrades and Automation shop lists feels smooth (no abrupt jumps) when using mouse wheel/trackpad.",
+        "Smooth scrolling does not break keyboard scrolling (Arrow keys / PageDown) inside the shop lists.",
+        "If the user has reduced motion enabled, smooth scrolling is disabled or significantly reduced to respect the preference."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/usePrefersReducedMotion.ts",
+          "operation": "create",
+          "description": "Create a small hook that returns whether prefers-reduced-motion is enabled (and updates on changes) for gating motion effects."
+        },
+        {
+          "path": "frontend/src/features/game/components/SmoothScrollArea.tsx",
+          "operation": "create",
+          "description": "Create a wrapper around the existing shadcn/ui ScrollArea that intercepts wheel/trackpad input and animates scrollTop via requestAnimationFrame/lerp for smoothness; avoid interfering with focus/keyboard scrolling; disable or reduce smoothing when prefers-reduced-motion is on. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/game/CapClickerView.tsx",
+          "operation": "modify",
+          "description": "Replace the two shop list ScrollArea usages with SmoothScrollArea (keeping heights, padding, and scrollbar styling consistent) so both Click Upgrades and Automation lists get smooth wheel scrolling. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Render a subtle, performant fast-cursor motion blur/trail overlay that fades out when the pointer slows/stops, without blocking interaction and respecting reduced motion.",
+      "acceptanceCriteria": [
+        "When the pointer moves quickly, a visible but subtle blur/trail effect appears near the cursor; when movement slows, the effect diminishes and disappears.",
+        "The effect does not interfere with clicking (must not block pointer events on underlying UI).",
+        "The effect respects prefers-reduced-motion (disabled when reduced motion is enabled).",
+        "The effect is performant (no noticeable frame drops during normal gameplay interactions)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/game/components/CursorMotionTrail.tsx",
+          "operation": "create",
+          "description": "Add an overlay component (canvas-based or DOM-based) that tracks pointer position + velocity and renders a subtle blurred trail only when speed exceeds a threshold; fade over time using requestAnimationFrame; ensure pointer-events are disabled so it never blocks clicks; gate/disable via prefers-reduced-motion using the shared hook."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add minimal global styles/utilities needed for the cursor trail overlay (e.g., fixed full-screen layer, pointer-events-none, appropriate z-index, and any blend/opacity tuning) without changing the overall warm theme."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the CursorMotionTrail overlay into the app shell so it renders above CapClickerView (and remains non-interactive)."
+        }
+      ]
+    }
+  ]
+}

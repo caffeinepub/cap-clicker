@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "Cap Clicker: a beginner-friendly incremental/clicker game where players earn caps by clicking, then spend caps on upgrades to increase caps per click and generate caps automatically over time.",
+  "architectural_notes": [
+    "Motion/visual effects (e.g., smooth scroll, motion blur) should respect reduced-motion accessibility preferences."
+  ],
+  "known_issues": [],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-implement-the-core-clicker-loop-render-a-prominent-click-button-that-awards-caps-when-pressed-track-total-caps-and-display-the-current-caps-total-and-caps-per-click-in-the-main-game-view",
+      "title": "Implement the core clicker loop: render a prominent \"Click\" button that awards caps when pressed, track total caps, and display the current caps total and caps-per-click in the main game view.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-upgrade-shop-that-allows-spending-caps-on-upgrades-that-increase-caps-earned-per-click-each-upgrade-must-have-a-name-description-current-level-or-owned-count-current-cost-and-the-effect-it-provides",
+      "title": "Add an upgrade shop that allows spending caps on upgrades that increase caps earned per click. Each upgrade must have a name, description, current level (or owned count), current cost, and the effect it provides.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-automation-idle-upgrades-that-generate-caps-over-time-caps-per-second-implement-a-timer-based-cap-accrual-loop-and-display-current-caps-per-second-in-the-ui",
+      "title": "Add automation/idle upgrades that generate caps over time (caps per second). Implement a timer-based cap accrual loop and display current caps-per-second in the UI.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-simple-beginner-friendly-game-layout-with-clear-progression-feedback-a-main-play-area-caps-total-click-button-a-stats-panel-caps-per-click-and-caps-per-second-and-a-shop-panel-upgrades-provide-subtle-feedback-on-clicks-and-purchases-e-g-button-press-animation-and-or-small-floating-number",
+      "title": "Create a simple, beginner-friendly game layout with clear progression feedback: a main play area (caps total + click button), a stats panel (caps-per-click and caps-per-second), and a shop panel (upgrades). Provide subtle feedback on clicks and purchases (e.g., button press animation and/or small floating number).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-choose-and-apply-a-cohesive-visual-theme-for-cap-clicker-colors-typography-layout-style-and-enforce-it-consistently-across-the-main-game-view-and-shop-do-not-use-a-blue-purple-dominant-palette",
+      "title": "Choose and apply a cohesive visual theme for Cap Clicker (colors, typography, layout style) and enforce it consistently across the main game view and shop. Do not use a blue/purple dominant palette.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-image-assets-for-the-game-iconography-background-and-reference-them-from-the-ui-via-the-frontend-public-assets-folder",
+      "title": "Add generated static image assets for the game (iconography/background) and reference them from the UI via the frontend public assets folder.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-expand-the-upgrade-shop-inventory-to-provide-about-10-total-upgrade-options-across-click-and-automation-upgrades-by-adding-additional-upgrade-definitions-each-with-a-unique-id-name-description-basecost-costscaling-effectperlevel-and-type-while-keeping-progression-balance-sensible-from-early-to-late-game",
+      "title": "Expand the upgrade shop inventory to provide about 10 total upgrade options (across click and automation upgrades) by adding additional upgrade definitions, each with a unique id, name, description, baseCost, costScaling, effectPerLevel, and type, while keeping progression/balance sensible from early to late game.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-do-a-ui-visual-polish-pass-on-the-main-game-screen-to-make-the-design-feel-more-premium-and-cohesive-while-keeping-the-existing-warm-amber-orange-theme-no-blue-purple-dominant-palette-focus-on-clearer-hierarchy-spacing-typography-scale-and-consistent-surface-styling-across-the-stats-panel-click-button-area-and-both-shop-panels",
+      "title": "Do a UI/visual polish pass on the main game screen to make the design feel more premium and cohesive, while keeping the existing warm amber/orange theme (no blue/purple-dominant palette). Focus on clearer hierarchy, spacing, typography scale, and consistent surface styling across the Stats panel, Click button area, and both shop panels.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-the-shop-ui-ux-styling-and-readability-for-upgrade-browsing-and-purchasing-click-upgrades-and-automation-including-scroll-area-presentation-section-clarity-and-upgrade-state-clarity-affordable-vs-unaffordable-vs-just-purchased",
+      "title": "Improve the shop UI/UX styling and readability for upgrade browsing and purchasing (Click Upgrades and Automation), including scroll-area presentation, section clarity, and upgrade state clarity (affordable vs unaffordable vs just purchased).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-moment-to-moment-game-feel-through-improved-micro-interactions-refine-click-button-press-feedback-and-floating-caps-feedback-animation-to-feel-smoother-and-more-satisfying-while-respecting-reduced-motion-preferences",
+      "title": "Enhance moment-to-moment game feel through improved micro-interactions: refine click button press feedback and floating +caps feedback animation to feel smoother and more satisfying, while respecting reduced-motion preferences.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-ui-more-accessible-and-robust-ensure-keyboard-navigability-for-core-actions-click-button-and-buy-buttons-visible-focus-states-and-sufficient-contrast-for-text-on-translucent-backgrounds",
+      "title": "Make the UI more accessible and robust: ensure keyboard navigability for core actions (click button and Buy buttons), visible focus states, and sufficient contrast for text on translucent backgrounds.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-the-size-and-hit-area-of-the-primary-click-target-the-main-click-button-so-it-is-noticeably-bigger-and-easier-to-click-tap-on-both-desktop-and-mobile-without-breaking-the-existing-centered-layout",
+      "title": "Increase the size and hit area of the primary click target (the main \"CLICK!\" button) so it is noticeably bigger and easier to click/tap on both desktop and mobile, without breaking the existing centered layout.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-smooth-scrolling-behavior-for-the-game-s-scrollable-shop-areas-the-two-scrollarea-lists-so-mouse-wheel-trackpad-scrolling-feels-smooth-and-not-jumpy",
+      "title": "Add smooth scrolling behavior for the game’s scrollable shop areas (the two ScrollArea lists) so mouse wheel/trackpad scrolling feels smooth and not jumpy.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-fast-mouse-movement-blur-effect-so-that-when-the-pointer-moves-quickly-a-subtle-motion-blur-trail-effect-appears-and-it-fades-away-when-the-pointer-slows-down-or-stops",
+      "title": "Add a fast-mouse-movement blur effect so that when the pointer moves quickly, a subtle motion blur/trail effect appears, and it fades away when the pointer slows down or stops.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Core clicker loop: a button click awards caps (main currency) and displays increasing totals",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Upgrade system to spend caps on improvements (e.g., increased caps per click)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Automation upgrades that generate caps over time (idle/auto income)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Expand the upgrade shop to include more upgrade options (target ~10 total upgrades)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Improve the game's visual design/UI to look good (overall layout, styling, and polish)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Increase the size of the main click/tap target (make the primary click area/button bigger and easier to hit)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add smooth scrolling behavior for scrollable shop/content areas",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add a fast-mouse-movement motion blur effect (mouse blur when cursor moves quickly)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "2d",
+  "projectName": "Cap Clicker",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
