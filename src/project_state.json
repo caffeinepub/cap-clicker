@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 9,
+  "projectStateVersion": 11,
   "summary": "Cap Clicker: a beginner-friendly incremental/clicker game where players earn caps by clicking, then spend caps on upgrades to increase caps per click and generate caps automatically over time.",
   "architectural_notes": [
     "Motion/visual effects (e.g., smooth scroll, motion blur) should respect reduced-motion accessibility preferences."
   ],
   "known_issues": [],
-  "isFixRequest": true,
+  "isFixRequest": false,
   "existing_features": [
     {
       "id": "feature-implement-the-core-clicker-loop-render-a-prominent-click-button-that-awards-caps-when-pressed-track-total-caps-and-display-the-current-caps-total-and-caps-per-click-in-the-main-game-view",
@@ -119,6 +119,14 @@
         "REQ-14"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-app-footer-in-the-main-game-view-to-include-a-closing-credit-line-that-says-made-by-anuj-english-text-placed-at-the-end-of-the-footer-so-it-appears-as-the-last-credit-shown-on-the-page",
+      "title": "Update the app footer in the main game view to include a closing credit line that says \"Made by Anuj\" (English text), placed at the end of the footer so it appears as the last credit shown on the page.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -167,6 +175,12 @@
     {
       "id": "AR-8",
       "summary": "Add a fast-mouse-movement motion blur effect (mouse blur when cursor moves quickly)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add an end/closing credit text (e.g., \"Made by Anuj\") somewhere appropriate in the app (such as a footer/about/credits area)",
       "reqIds": [],
       "status": "pending"
     }

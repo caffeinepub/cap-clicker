@@ -200,16 +200,21 @@ export function CapClickerView() {
           </div>
 
           {/* Footer */}
-          <footer className="text-center mt-8 sm:mt-12 text-amber-100/80 text-sm">
-            © 2026. Built with love using{' '}
-            <a 
-              href="https://caffeine.ai" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-amber-200 hover:text-amber-100 underline underline-offset-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-amber-900/50 rounded-sm"
-            >
-              caffeine.ai
-            </a>
+          <footer className="text-center mt-8 sm:mt-12 text-amber-100/80 text-sm space-y-1">
+            <div>
+              © 2026. Built with love using{' '}
+              <a 
+                href="https://caffeine.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-amber-200 hover:text-amber-100 underline underline-offset-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-amber-900/50 rounded-sm"
+              >
+                caffeine.ai
+              </a>
+            </div>
+            <div className="text-amber-100/70">
+              Made by Anuj
+            </div>
           </footer>
         </div>
       </div>

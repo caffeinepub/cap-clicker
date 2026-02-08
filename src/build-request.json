@@ -1,71 +1,34 @@
 {
   "kind": "build_request",
-  "title": "Enlarge click target, add smooth scrolling, and add fast-mouse motion blur effect",
+  "title": "Add footer credit text \"Made by Anuj\"",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-12",
-      "text": "Increase the size and hit area of the primary click target (the main \"CLICK!\" button) so it is noticeably bigger and easier to click/tap on both desktop and mobile, without breaking the existing centered layout.",
+      "id": "REQ-15",
+      "text": "Update the app footer in the main game view to include a closing credit line that says \"Made by Anuj\" (English text), placed at the end of the footer so it appears as the last credit shown on the page.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-6"
         ],
         "quotes": [
-          "the place where i click is smaller make it bigger"
+          "at last say mad by anuj"
         ]
       },
       "acceptanceCriteria": [
-        "The main click button renders larger than before at all breakpoints (mobile + desktop).",
-        "Click/tap reliably registers across the entire visible button area; no dead zones near the edges.",
-        "The button remains centered in the middle column and does not overlap the Stats or Shop panels at common screen sizes."
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "text": "Add smooth scrolling behavior for the game’s scrollable shop areas (the two ScrollArea lists) so mouse wheel/trackpad scrolling feels smooth and not jumpy.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "add smooth scroll"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Scrolling the Click Upgrades and Automation shop lists feels smooth (no abrupt jumps) when using mouse wheel/trackpad.",
-        "Smooth scrolling does not break keyboard scrolling (Arrow keys / PageDown) inside the shop lists.",
-        "If the user has reduced motion enabled, smooth scrolling is disabled or significantly reduced to respect the preference."
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "text": "Add a fast-mouse-movement blur effect so that when the pointer moves quickly, a subtle motion blur/trail effect appears, and it fades away when the pointer slows down or stops.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "and mouse blur when it is move fast"
-        ]
-      },
-      "acceptanceCriteria": [
-        "When the pointer moves quickly, a visible but subtle blur/trail effect appears near the cursor; when movement slows, the effect diminishes and disappears.",
-        "The effect does not interfere with clicking (must not block pointer events on underlying UI).",
-        "The effect respects prefers-reduced-motion (disabled when reduced motion is enabled).",
-        "The effect is performant (no noticeable frame drops during normal gameplay interactions)."
+        "In the Cap Clicker main screen footer, the text \"Made by Anuj\" is visible to users.",
+        "The credit appears as the last line/item in the footer content (i.e., after the existing copyright and caffeine.ai link).",
+        "The added text uses the existing footer styling (or a compatible subtle style) and does not break the layout on mobile or desktop."
       ]
     }
   ],
   "constraints": [
-    "Frontend code under the immutable paths listed in SYSTEM_CONTEXT must not be modified; compose existing UI components instead of editing them.",
-    "Do not introduce backend changes; this request is UI/UX only."
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Keep changes limited to adding the footer credit; do not alter gameplay logic."
   ],
   "nonGoals": [
-    "Adding new upgrades, currencies, or gameplay mechanics.",
-    "Changing the warm amber/orange visual theme or replacing generated art assets."
+    "Do not add a new screen/page (e.g., About page) for the credit unless necessary.",
+    "Do not change the existing visual theme beyond what is needed to display the new footer text."
   ],
   "imageRequirements": {
     "required": [],

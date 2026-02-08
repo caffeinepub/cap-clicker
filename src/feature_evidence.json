@@ -2,11 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-increase-the-size-and-hit-area-of-the-primary-click-target-the-main-click-button-so-it-is-noticeably-bigger-and-easier-to-click-tap-on-both-desktop-and-mobile-without-breaking-the-existing-centered-layout",
-      "featureTitle": "Increase the size and hit area of the primary click target (the main \"CLICK!\" button) so it is noticeably bigger and easier to click/tap on both desktop and mobile, without breaking the existing centered layout.",
+      "featureId": "feature-update-the-app-footer-in-the-main-game-view-to-include-a-closing-credit-line-that-says-made-by-anuj-english-text-placed-at-the-end-of-the-footer-so-it-appears-as-the-last-credit-shown-on-the-page",
+      "featureTitle": "Update the app footer in the main game view to include a closing credit line that says \"Made by Anuj\" (English text), placed at the end of the footer so it appears as the last credit shown on the page.",
       "files": [
-        "frontend/src/features/game/CapClickerView.tsx",
-        "frontend/src/index.css"
+        "frontend/src/features/game/CapClickerView.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -16,47 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-12"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-smooth-scrolling-behavior-for-the-game-s-scrollable-shop-areas-the-two-scrollarea-lists-so-mouse-wheel-trackpad-scrolling-feels-smooth-and-not-jumpy",
-      "featureTitle": "Add smooth scrolling behavior for the game’s scrollable shop areas (the two ScrollArea lists) so mouse wheel/trackpad scrolling feels smooth and not jumpy.",
-      "files": [
-        "frontend/src/features/game/CapClickerView.tsx",
-        "frontend/src/features/game/components/SmoothScrollArea.tsx",
-        "frontend/src/hooks/usePrefersReducedMotion.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-13"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-fast-mouse-movement-blur-effect-so-that-when-the-pointer-moves-quickly-a-subtle-motion-blur-trail-effect-appears-and-it-fades-away-when-the-pointer-slows-down-or-stops",
-      "featureTitle": "Add a fast-mouse-movement blur effect so that when the pointer moves quickly, a subtle motion blur/trail effect appears, and it fades away when the pointer slows down or stops.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/features/game/components/CursorMotionTrail.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-14"
+        "REQ-15"
       ],
       "confidence": "high"
     }
